@@ -34,7 +34,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 10;
-	background-color: #3386993d;
+	background-color: #9ab2b7fe;
 	
 }
 .header__container {
@@ -188,9 +188,11 @@ body {
 		border-radius: 2px;
 	}
 }
-.menu__icon {
+.menu-icon {
 	display: none;
 }
+
+
 @media (max-width: 767.98px){
 	.header__container {
 		min-height: 50px;
@@ -203,16 +205,16 @@ body {
 		font-size: 20px;
 		color: #fff;
 	}
-	.menu__icon {
+	.menu-icon {
 		display: block;
 		flex: 0 0 30px;
 		height: 18px;
 		position: relative;
 		align-self: center;
 	}
-	.menu__icon::before,
-	.menu__icon::after,
-	.menu__icon span {
+	.menu-icon::before,
+	.menu-icon::after,
+	.menu-icon span {
 		content: "";
 		position: absolute;
 		height: 1px;
@@ -220,13 +222,13 @@ body {
 		width: 100%;
 		background-color: #fff;
 	}
-	.menu__icon::before {
+	.menu-icon::before {
 		top: 0;
 	}
-	.menu__icon::after {
+	.menu-icon::after {
 		bottom: 0;
 	}
-	.menu__icon span {
+	.menu-icon span {
 		top: 50%;
 		margin-top: -0.5px;
 	}
@@ -239,6 +241,7 @@ body {
 		overflow: auto;
 		background-color:  #71b2c1;
 		padding: 70px 15px 20px 15px;
+		transition: left 0.3s;
 	}
 	.menu__body::after{
 		content: "";
@@ -247,9 +250,15 @@ body {
 		position: fixed;
 		top: 0;
 		left: -100%;
-		background-color: #1a3c44;
+		background-color: #889fa3d4;
 		z-index: 1;
+		transition: left 0.3s;
 	}
+	.menu-open .menu__body,
+	.menu-open .menu__body::after {
+		left: 0;
+	}
+
 	.sub-menu__list {
 		padding: 10px 0 0 0;
 		min-width: 0px;
@@ -281,7 +290,7 @@ body {
 }
 .main__container {
 	position: relative;
-	z-index: 11;
+	z-index: 9;
 	flex: 1 1 auto;
 }
 .main__body {
@@ -328,4 +337,12 @@ body {
 	top: 0;
 	left: 0;
 	object-fit: cover;
+}
+@media (max-width: 767.98px) {
+	.title {
+		font-size: 35px;
+	}
+	.main__body {
+		row-gap: 15px;
+	}
 }
