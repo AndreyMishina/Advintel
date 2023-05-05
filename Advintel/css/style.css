@@ -301,6 +301,30 @@ body {
 }
 .main__title {
 }
+[data-text-type]::after {
+	content: "|";
+	-webkit-animation: flash 0.3s infinite linear alternate;
+			  animation: flash 0.3s infinite linear alternate;
+ }
+ @-webkit-keyframes flash {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+ }
+ @keyframes flash {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+ }
+ [data-text-type].done::after {
+	display: none;
+ }
 .main__text {
 }
 .main__button {
